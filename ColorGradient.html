@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Gradient</title>
+    
+    <link rel="stylesheet" href="ColorGradient.css">
+    
+</head>
+<body >
+    <h1 id = "Headline">Welcome to my Color Gradient Website</h1>
+    <section id="section">
+        <div id="button">
+            <button id="btn1">color 1</button>
+            <button id="btn2">color 2 </button>
+        </div>
+        <h2>Copy your code from below : </h2>
+        <div class = "copyCode">
+            background-image: linear-gradient(to right , #000 , #fff)  
+        </div>
+    </section>
+    <script>
+        let button1 = document.getElementById("btn1")
+        let button2 = document.getElementById("btn2")
+        let copyDiv = document.querySelector(".copyCode")
+        let rgb1 = "#004773"
+        let rgb2 = "#54d542"
+ 
+        const haxValues = () => {
+            let hexValue = "123456789abscdfw" ;
+            let colors = "#" ;
+            for( i = 0 ; i < 6 ; i++){
+                colors = colors + hexValue[Math.floor(Math.random()*16)];
+            }
+            return colors;
+        }
+
+        const handleButtons1 = () => {
+            // button1.innerText = rgb1 ;
+            rgb1 = haxValues();
+            console.log(rgb1)
+            document.body.style.backgroundImage =`linear-gradient(to right , ${rgb1} , ${rgb2})`;
+            copyDiv.innerHTML = `background-image: linear-gradient(to right , ${rgb1} , ${rgb2})`;
+        }
+        const handleButtons2 = () => {
+            // button2.innerText = rgb2 ;
+            rgb2 = haxValues();
+            console.log(rgb2)
+            document.body.style.backgroundImage =`linear-gradient(to right , ${rgb1} , ${rgb2})`;
+            copyDiv.innerHTML = `background-image: linear-gradient(to right , ${rgb1} , ${rgb2})`;
+           
+        }
+
+        button1.addEventListener("click" , handleButtons1)
+        button2.addEventListener("click" , handleButtons2)
+        copyDiv.addEventListener('click' , () =>{
+            navigator.clipboard.writeText(copyDiv.innerText);
+        })
+
+    </script>
+    
+</body>
+</html>

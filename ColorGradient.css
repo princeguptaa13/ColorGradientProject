@@ -1,0 +1,30 @@
+body{
+height: 100vh;
+background-image: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #a8eb12
+);
+}
+#button {
+    gap: 3rem;
+    color: yellow;
+    border-radius: 20px;
+    margin: 50px;
+    display: flex;
+    border-color: #a8eb12;
+}
+#Headline{
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+#section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+}
